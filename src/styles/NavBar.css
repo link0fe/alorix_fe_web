@@ -1,0 +1,139 @@
+body, h1, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top-bar {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .top-bar.hidden {
+    transform: translateY(-100%);
+  }
+  
+  .top-bar a {
+    color: #cccccc;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+  }
+  
+  .top-bar a:hover {
+    color: #ff9800;
+  }
+  
+  .top-bar i {
+    margin-right: 0.5rem;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    height: 100px; /* Fixed height */
+    padding: 0 2rem; /* Adjusted padding */
+  }
+  
+  .navbar__logo img {
+    height: 80px; /* Adjusted logo height */
+    margin: 10px; /* Centered logo vertically */
+  }
+  
+  .navbar__toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+  }
+  
+  .navbar__links {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure full height */
+  }
+  
+  .navbar__links a {
+    color: white;
+    text-decoration: none;
+    padding: 0 1rem;
+    margin-left: 1rem;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure full height */
+  }
+  
+  .navbar__links a:hover, .navbar__links a.active {
+    background-color: #b35900;
+    color: white;
+    border-radius: 0; /* Removed border-radius */
+  }
+  
+  .navbar__links a.active {
+    background-color: #b35900;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: row;
+      align-items: center;
+      height: auto; /* Auto height for stacked items */
+      padding: 0.5rem;
+    }
+  
+    .navbar__logo img {
+      height: 50px; /* Adjusted logo height */
+      margin: 5px; /* Centered logo vertically */
+    }
+  
+    .navbar__toggle {
+      display: block; /* Show toggle button on mobile */
+    }
+  
+    .navbar__links {
+      position: absolute;
+      top: 100px; /* Below the header */
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 200px;
+      background-color: #333;
+      display: none; /* Hide menu by default */
+    }
+  
+    .navbar__links.open {
+      display: flex; /* Show menu when open */
+    }
+  
+    .navbar__links a {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+  
+    .navbar__links a:last-child {
+      border-bottom: none; /* Remove bottom border from last item */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .navbar__toggle {
+      display: none; /* Hide toggle button on desktop */
+    }
+  }
